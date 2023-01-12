@@ -1,0 +1,190 @@
+<div class="flex flex-col h-full">
+  <div class="w-full text-black-900 bg-background">
+    <div x-data="{ open: false }"
+      class="flex flex-col max-w-screen px-[1vw] py-[1vw] mx-auto md:items-center md:justify-between md:flex-row md:px-[2vw] lg:px-[2vw]">
+      <div class=" flex flex-row items-center justify-between">
+        <a href="/" class="pl-0">
+          <img class="w-10 lg:w-[3vw]" src="../../assets/icons/Group 1.svg" alt="">
+        </a>
+        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" (click)="onOpen()">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path *ngIf="!open" fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            <path *ngIf="open" fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <nav [ngClass]="{'flex': open === true, 'hidden' : open === false }" :class="{'flex': open, 'hidden': !open}"
+        class="flex-col flex-grow pb-[5vw] md:pb-0 hidden md:flex md:justify-end md:flex-row ">
+
+
+        <div (click)="onOpenDropdown()" class="relative" x-data="{ open: false }">
+          <!-- @click="open = !open" -->
+
+          <div class="  font-roboto pt-[1vw] pb-[2vw] flex  justify-center px-[4vw]">
+            <div>
+            <a routerLink="/products"
+               class="py-4 px-2 text-black-900  underline-offset-4 decoration-2 decoration-primary underlinefa-pull-right  underline-primary focus:underline ">
+
+               Products
+               <!-- <img src="../../assets/image/Rectangle 4057.svg" class="lg:pl-[0.5vw]" alt=""> -->
+            </a>
+          </div>
+          <div>
+
+            <a routerLink="/docs"
+               class="py-4 px-2 text-black-900 underline-offset-4 decoration-2 decoration-primary  focus:underline ">
+               Docs
+             </a>
+            </div>
+            <div>
+             <a routerLink="/partner"
+               class="py-[2vw] px-2 text-black-900  underline-offset-4 decoration-2 decoration-primary  focus:underline">
+               Partners
+              </a>
+            </div>
+            <div>
+              <a routerLink="/aboutUs"
+              class="py-4 px-3 text-black-900 underline-offset-4 decoration-2 decoration-primary  focus:underline">
+              About Us
+             </a>
+            </div>
+            <div>
+             <a routerLink="/connectUs"
+             class="py-4 px-3 text-black-900 underline-offset-4 decoration-2 decoration-primary  focus:underline">
+             Connect Us
+            </a>
+          </div>
+           </div>
+
+
+        </div>
+        <div class="ml-[16vw] pl-5 pt-2">
+
+          <button routerLink="/login" class="bg-transparent hover:bg-secondcolor text-black-900 font-semibold hover:text-white py-[0.6vw] px-[3vw] border border-slate-900 hover:border-transparent rounded-lg border-b-2 ">
+            Login
+          </button>
+        </div>
+        <div class="p-[1vw] pt-[1.5vw]  ">
+          <button class="pr-[0.3vw]" >
+            <img class="" src="../../assets/icons/Vector (4).svg" alt="">
+           </button>
+           <button class="">
+            <img class="pb-[0.3vw] pr-[0.7vw]" src="../../assets/icons/Vector.svg" alt=""> </button>
+          </div>
+
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- <nav class="bg-background  ">
+
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between">
+      <div class="flex space-x-7">
+        <a href="#" class="flex items-center py-4 px-2">
+          <img src="../../assets/icons/Group 1.svg" alt="Logo" class="h-8 w-8 mr-2" /> </a>
+
+           <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline pl-[30vw]" (click)="onOpen()">
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+              <path *ngIf="!open" fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+                <path *ngIf="open" fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+
+            </svg>
+          </button>
+          <nav [ngClass]="{'flex': open === true, 'hidden' : open === false }" :class="{'flex': open, 'hidden': !open}"
+        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+        <div class="  font-roboto ">
+          <a routerLink="/products"
+             class="py-4 px-2 text-black-900 border-b-4 hover:underline focus:underline ">
+             Products
+          </a>
+         <a routerLink="/support"
+           class="py-4 px-2 text-black-900 hover:underline focus:underline">
+           Support
+         </a>
+          <a routerLink="/docs"
+             class="py-4 px-2 text-black-900 hover:underline focus:underline ">
+             Docs
+           </a>
+           <a routerLink="/partner"
+             class="py-4 px-2 text-black-900 hover:underline focus:underline">
+             Partners
+            </a>
+            <a routerLink="/aboutUs"
+            class="py-4 px-2 text-black-900 hover:underline focus:underline">
+            About Us
+           </a>
+           <a routerLink="/connectUs"
+           class="py-4 px-2 text-black-900 hover:underline focus:underline">
+           Connect Us
+          </a>
+         </div>
+
+
+          </nav>
+
+
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+<!-- <div class="flex flex-col h-full  ">
+  <div class="w-full text-black-700  ">
+<div class="  px-[10vw]  lg:items-center md:justify-between md:flex-row md:px-6">
+
+  <div class="p-[1vw] flex flex-row items-center justify-between">
+  <a href="#" class="">
+<img class=" md:w-[80vw] md:h-[100vw] 2xl:w-[8vw] 2xl:h-[3vw]" src="../../assets/icons/Group 1.svg" alt="">
+
+  </a> -->
+
+  <!-- <div class="pl-[12vw] ml-[13vw] font-roboto">
+    <a routerLink="/products"class="px-[1vw] py-2 mt-1 text-sm font-bold rounded-lg  md:mt-0 hover:underline focus:underline ">Products</a>
+    <a routerLink="/support" class="px-[1vw] py-2 mt-1 text-sm font-bold rounded-lg  md:mt-0 hover:underline focus:underline ">Support</a>
+    <a routerLink="/docs" class="px-[1vw] py-2 mt-1 text-sm font-bold rounded-lg  md:mt-0 hover:underline focus:underline ">Docs</a>
+    <a routerLink="/partner" class="px-[1vw] py-2 mt-1 text-sm font-bold rounded-lg  md:mt-0 hover:underline focus:underline ">Partners</a>
+    <a routerLink="/aboutUs"class="px-[1vw] py-2 mt-1 text-sm font-bold rounded-lg  md:mt-0 hover:underline focus:underline ">About Us</a>
+    <a routerLink="/connectUs" class="px-[1vw] py-2 mt-1 text-sm font-bold rounded-lg  md:mt-0 hover:underline focus:underline ">Connect Us</a>
+  </div>
+  <div class="ml-72 p-2">
+
+    <button routerLink="/login" class="bg-transparent hover:bg-secondcolor text-black-900 font-semibold hover:text-white py-1.5 px-9 border border-slate-900 hover:border-transparent rounded-lg border-b-2 ">
+      Login
+    </button>
+  </div>
+<div class="p-[vw]">
+      <button class="p-[vw]" >
+        <img class="" src="../../assets/icons/Vector (4).svg" alt="">
+       </button> -->
+<!--
+       <button >
+        <img class="" src="../../assets/icons/Vector.svg" alt=""> -->
+
+          <!-- <ul>
+
+            <li value="active">English</li>
+            <li value="inactive">Arabic</li>
+            <li value="hidden">Kurdish</li>
+
+          </ul> -->
+
+      <!-- </button>
+      </div>
+</div>
+</div>
+  </div>
+
+</div> -->
