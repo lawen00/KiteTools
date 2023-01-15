@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './User.model';
 
 
 @Component({
@@ -10,23 +9,22 @@ import { User } from './User.model';
 })
 export class GetStartComponent {
 
-  // user!: User;
-
-  constructor(public router: Router ){
+  constructor(public router: Router) {
 
   }
-onNext(){
-  this.router.navigate(['/registerNext']);
-}
 
-showPassword = false;
-showPasswordTwo = false;
+  onNext() {
+    this.router.navigate(['/registerNext']);
+  }
 
-passwordChange() {
+  showPassword = false;
+  showPasswordTwo = false;
+
+  passwordChange() {
     this.showPassword = !this.showPassword;
-}
+  }
 
-passwordTwoChange() {
-  this.showPasswordTwo = !this.showPasswordTwo;
-}
+  passwordTwoChange() {
+    this.showPasswordTwo = !this.showPasswordTwo;
+  }
 }

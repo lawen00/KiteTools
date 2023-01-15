@@ -1,6 +1,8 @@
-<div class="bg-background" >
-  <app-header></app-header>
-<!-- <mat-horizontal-stepper>
+<div class=" bg-background flex flex-col justify-between">
+  <div class="flex">
+    <app-header></app-header>
+  </div>
+  <!-- <mat-horizontal-stepper>
   <mat-step label="step 1">
 
   </mat-step>
@@ -8,14 +10,17 @@
 
   </mat-step>
   <mat-step label="step 1">
-
   </mat-step>
 </mat-horizontal-stepper> -->
-<router-outlet></router-outlet>
+  <div class="flex flex-grow justify-center items-center w-full ">
+    <router-outlet></router-outlet>
+  </div>
 
-<app-footer></app-footer>
+  <div class="w-[100vw]">
+    <app-footer></app-footer>
+  </div>
 </div>
-
-
-
-
+<!-- <div class="h-screen flex flex-col">
+  <div class="bg-green-600 h-48 ">hey</div>
+  <div class="bg-green-600 h-48 ">hey</div>
+</div> -->
